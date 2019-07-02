@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/listaProdutos">
+    app:startDestination="@id/login">
     <fragment
         android:id="@+id/listaProdutos"
         android:name="br.com.alura.aluraesporte.ui.fragment.ListaProdutosFragment"
@@ -48,5 +48,18 @@
         <argument
             android:name="produtoId"
             app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="br.com.alura.aluraesporte.ui.fragment.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login">
+        <action
+            android:id="@+id/acao_login_para_listaProdutos"
+            app:destination="@id/listaProdutos"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>
