@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_lista_produtos_deslogar"
+        android:title="Deslogar"
+        android:icon="@drawable/ic_action_deslogar"
+        app:showAsAction="always"/>
+</menu>
