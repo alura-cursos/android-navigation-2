@@ -20,7 +20,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 private const val FALHA_AO_CRIAR_PAGAMENTO = "Falha ao criar pagamento"
 private const val COMPRA_REALIZADA = "Compra realizada"
 
-class PagamentoFragment : Fragment() {
+class PagamentoFragment : BaseFragment() {
 
     private val argumentos by navArgs<PagamentoFragmentArgs>()
     private val produtoId by lazy {
