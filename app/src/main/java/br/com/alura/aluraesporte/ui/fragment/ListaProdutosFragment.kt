@@ -52,7 +52,7 @@ class ListaProdutosFragment : Fragment() {
 
     private fun vaiParaLogin() {
         val direcao = ListaProdutosFragmentDirections
-            .acaoListaProdutosParaLogin()
+            .acaoGlobalLogin()
         controlador.navigate(direcao)
     }
 
