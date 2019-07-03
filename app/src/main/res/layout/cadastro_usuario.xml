@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_usuario_id"
+        android:id="@+id/cadastro_usuario_id_usuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -20,50 +20,61 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Id do usuário"
+            android:hint="Nome"
             android:inputType="number"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_senha"
+        android:id="@+id/cadastro_usuario_senha"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:layout_constraintEnd_toEndOf="@id/login_usuario_id"
-        app:layout_constraintStart_toStartOf="@id/login_usuario_id"
-        app:layout_constraintTop_toBottomOf="@id/login_usuario_id"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintEnd_toEndOf="@id/cadastro_usuario_id_usuario"
+        app:layout_constraintStart_toStartOf="@id/cadastro_usuario_id_usuario"
+        app:layout_constraintTop_toBottomOf="@id/cadastro_usuario_id_usuario"
+        app:layout_constraintVertical_bias="0.0"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Senha"
-            android:inputType="number"
+            android:inputType="textPassword"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cadastro_usuario_confirma_senha"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintEnd_toEndOf="@id/cadastro_usuario_senha"
+        app:layout_constraintStart_toStartOf="@id/cadastro_usuario_senha"
+        app:layout_constraintTop_toBottomOf="@id/cadastro_usuario_senha"
+        app:layout_constraintVertical_bias="0.0"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirmar senha"
+            android:inputType="textPassword"
             android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/login_botao_logar"
+        android:id="@+id/cadastro_usuario_botao_cadastrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Logar"
-        app:layout_constraintEnd_toEndOf="@id/login_senha"
-        app:layout_constraintStart_toStartOf="@id/login_senha"
-        app:layout_constraintTop_toBottomOf="@id/login_senha" />
-
-    <Button
-        android:id="@+id/login_botao_cadastrar_usuario"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
-        android:text="Cadastrar usuário"
-        app:layout_constraintEnd_toEndOf="@id/login_botao_logar"
-        app:layout_constraintStart_toStartOf="@id/login_botao_logar"
-        app:layout_constraintTop_toBottomOf="@id/login_botao_logar" />
+        android:text="Cadastrar"
+        app:layout_constraintEnd_toEndOf="@id/cadastro_usuario_confirma_senha"
+        app:layout_constraintStart_toStartOf="@id/cadastro_usuario_confirma_senha"
+        app:layout_constraintTop_toBottomOf="@id/cadastro_usuario_confirma_senha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
