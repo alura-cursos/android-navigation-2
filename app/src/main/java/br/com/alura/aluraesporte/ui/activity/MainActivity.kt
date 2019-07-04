@@ -3,6 +3,7 @@ package br.com.alura.aluraesporte.ui.activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
@@ -22,11 +23,15 @@ class MainActivity : AppCompatActivity() {
                                                       destination,
                                                       arguments ->
             title = destination.label
-            when(destination.id) {
-                R.id.listaProdutos -> supportActionBar?.show()
-                R.id.login -> supportActionBar?.hide()
-                R.id.cadastroUsuario -> supportActionBar?.show()
-            }
+            viewModel.appBar.observe(this, Observer {
+                it?.let { temAppBar ->
+                    if(temAppBar){
+                        supportActionBar?.show()
+                    } else {
+                        supportActionBar?.hide()
+                    }
+                }
+            })
         }
     }
 

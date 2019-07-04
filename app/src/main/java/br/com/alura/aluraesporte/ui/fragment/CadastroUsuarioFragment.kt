@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.alura.aluraesporte.R
+import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
 import kotlinx.android.synthetic.main.cadastro_usuario.*
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class CadastroUsuarioFragment : Fragment() {
 
     private val controlador by lazy {
         findNavController()
     }
+    private val estadoAppViewModel: EstadoAppViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +32,7 @@ class CadastroUsuarioFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        estadoAppViewModel.temAppBar = false
         cadastro_usuario_botao_cadastrar.setOnClickListener {
             controlador.popBackStack()
         }
